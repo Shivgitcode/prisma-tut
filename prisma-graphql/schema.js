@@ -8,10 +8,13 @@ const typeDefs = `#graphql
 
     type Query{
         users:[User]
+        user(id:ID!):User
     }
 
     type Mutation{
         addUser(user:AddUser):String
+        deleteUser(id:ID!):String
+        updateUser(id:ID!,user:AddUser!):String
     }
 
     input AddUser{
@@ -21,4 +24,4 @@ const typeDefs = `#graphql
 
 
 `
-module.exports.typeDefs = typeDefs
+module.exports = typeDefs
